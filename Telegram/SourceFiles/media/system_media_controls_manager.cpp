@@ -52,7 +52,7 @@ SystemMediaControlsManager::SystemMediaControlsManager()
 
 	// Flatpak provides default permission to MPRIS, but not snap
 	if (!KSandbox::isFlatpak()) {
-		_controls->setServiceName(u"tdesktop"_q);
+		_controls->setServiceName(u"nim"_q);
 	}
 	_controls->setApplicationName(AppName.utf16());
 	const auto inited = _controls->init();

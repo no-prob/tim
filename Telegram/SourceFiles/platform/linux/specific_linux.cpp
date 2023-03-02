@@ -116,7 +116,7 @@ static void t_desktop_application_init(TDesktopApplication *application) {
 namespace Platform {
 namespace {
 
-constexpr auto kDesktopFile = ":/misc/org.telegram.desktop.desktop"_cs;
+constexpr auto kDesktopFile = ":/misc/org.nim.desktop.desktop"_cs;
 
 #ifndef DESKTOP_APP_DISABLE_DBUS_INTEGRATION
 bool PortalAutostart(bool start, bool silent) {
@@ -484,8 +484,8 @@ bool GenerateDesktopFile(
 
 	if (!Core::UpdaterDisabled()) {
 		DEBUG_LOG(("App Info: removing old .desktop files"));
-		QFile::remove(u"%1telegram.desktop"_q.arg(targetPath));
-		QFile::remove(u"%1telegramdesktop.desktop"_q.arg(targetPath));
+		QFile::remove(u"%1nim.desktop"_q.arg(targetPath));
+		QFile::remove(u"%1nim.desktop"_q.arg(targetPath));
 
 		const auto appimagePath = u"file://%1%2"_q.arg(
 			cExeDir(),
@@ -511,7 +511,7 @@ bool GenerateDesktopFile(
 			hashMd5Hex(exePath.constData(), exePath.size(), md5Hash);
 		}
 
-		QFile::remove(u"%1org.telegram.desktop.%2.desktop"_q.arg(
+		QFile::remove(u"%1org.nim.desktop.%2.desktop"_q.arg(
 			targetPath,
 			md5Hash));
 	}
@@ -671,7 +671,7 @@ QString psAppDataPath() {
 	// If we find data there, we should still use it.
 	auto home = QDir::homePath();
 	if (!home.isEmpty()) {
-		auto oldPath = home + u"/.TelegramDesktop/"_q;
+		auto oldPath = home + u"/.NimDesktop/"_q;
 		auto oldSettingsBase = oldPath + u"tdata/settings"_q;
 		if (QFile::exists(oldSettingsBase + '0')
 			|| QFile::exists(oldSettingsBase + '1')
@@ -735,11 +735,11 @@ void start() {
 					md5Hash.data());
 			}
 
-			return u"org.telegram.desktop._%1.desktop"_q.arg(
+			return u"org.nim.desktop._%1.desktop"_q.arg(
 				md5Hash.constData());
 		}
 
-		return u"org.telegram.desktop.desktop"_q;
+		return u"org.nim.desktop.desktop"_q;
 	}());
 
 	LOG(("Launcher filename: %1").arg(QGuiApplication::desktopFileName()));

@@ -1553,7 +1553,7 @@ bool checkReadyUpdate() {
 	QFileInfo updater(cWorkingDir() + u"tupdates/temp/Updater.exe"_q);
 #elif defined Q_OS_MAC // Q_OS_WIN
 	QString curUpdater = (cExeDir() + cExeName() + u"/Contents/Frameworks/Updater"_q);
-	QFileInfo updater(cWorkingDir() + u"tupdates/temp/Telegram.app/Contents/Frameworks/Updater"_q);
+	QFileInfo updater(cWorkingDir() + u"tupdates/temp/Nim.app/Contents/Frameworks/Updater"_q);
 #elif defined Q_OS_UNIX // Q_OS_MAC
 	QString curUpdater = (cExeDir() + u"Updater"_q);
 	QFileInfo updater(cWorkingDir() + u"tupdates/temp/Updater"_q);
@@ -1676,7 +1676,7 @@ QString countAlphaVersionSignature(uint64 version) { // duplicated in packer.cpp
 		return QString();
 	}
 
-	QByteArray signedData = (qstr("TelegramBeta_") + QString::number(version, 16).toLower()).toUtf8();
+	QByteArray signedData = (qstr("NimBeta_") + QString::number(version, 16).toLower()).toUtf8();
 
 	static const int32 shaSize = 20, keySize = 128;
 

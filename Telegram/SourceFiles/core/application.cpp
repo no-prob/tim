@@ -1681,8 +1681,8 @@ void Application::RegisterUrlScheme() {
 			? u"-workdir \"%1\""_q.arg(cWorkingDir())
 			: QString(),
 		.protocol = u"tg"_q,
-		.protocolName = u"Telegram Link"_q,
-		.shortAppName = u"tdesktop"_q,
+		.protocolName = u"Nim Link"_q,
+		.shortAppName = u"nim"_q,
 		.longAppName = QCoreApplication::applicationName(),
 		.displayAppName = AppName.utf16(),
 		.displayAppDescription = AppName.utf16(),

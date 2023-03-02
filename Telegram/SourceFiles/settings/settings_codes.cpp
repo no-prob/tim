@@ -123,7 +123,7 @@ auto GenerateCodes() {
 		const auto weak = window
 			? base::make_weak(&window->session().account())
 			: nullptr;
-		FileDialog::GetOpenPath(Core::App().getFileDialogParent(), "Open DC endpoints", "DC Endpoints (*.tdesktop-endpoints)", [weak](const FileDialog::OpenResult &result) {
+		FileDialog::GetOpenPath(Core::App().getFileDialogParent(), "Open DC endpoints", "DC Endpoints (*.nim-endpoints)", [weak](const FileDialog::OpenResult &result) {
 			if (!result.paths.isEmpty()) {
 				const auto loadFor = [&](not_null<Main::Account*> account) {
 					if (!account->mtp().dcOptions().loadFromFile(result.paths.front())) {

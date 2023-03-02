@@ -24,7 +24,7 @@ Launcher::Launcher(int argc, char *argv[])
 }
 
 void Launcher::initHook() {
-	base::RegisterBundledResources(u"Telegram.rcc"_q);
+	base::RegisterBundledResources(u"Nim.rcc"_q);
 }
 
 bool Launcher::launchUpdater(UpdaterLaunch action) {

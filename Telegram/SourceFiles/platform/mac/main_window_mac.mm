@@ -282,7 +282,7 @@ void MainWindow::createGlobalMenu() {
 		}
 	};
 
-	auto main = psMainMenu.addMenu(u"Telegram"_q);
+	auto main = psMainMenu.addMenu(u"Nim"_q);
 	{
 		auto callback = [=] {
 			ensureWindowShown();
@@ -292,7 +292,7 @@ void MainWindow::createGlobalMenu() {
 			tr::lng_mac_menu_about_telegram(
 				tr::now,
 				lt_telegram,
-				u"Telegram"_q),
+				u"Nim"_q),
 			std::move(callback))
 		->setMenuRole(QAction::AboutQtRole);
 	}
