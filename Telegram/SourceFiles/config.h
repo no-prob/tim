@@ -85,7 +85,7 @@ constexpr auto ApiHash = QT_STRINGIFY(TDESKTOP_API_HASH);
 // Your users will start getting internal server errors on login
 // if you deploy an app using those 'api_id' and 'api_hash'.
 
-#error You are required to provide API_ID and API_HASH.
+//#error You are required to provide API_ID and API_HASH.
 
 constexpr auto ApiId = 17349;
 constexpr auto ApiHash = "344583e45741c457fe1862106095a5eb";
